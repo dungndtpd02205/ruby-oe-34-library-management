@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RubyOe34LibraryManagement</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
-  </head>
-
-  <body>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= render "layouts/shim" %>
+</head>
+<body>
+  <%= render "layouts/header" %>
+  <div class="container">
     <%= yield %>
-  </body>
+  </div>
+  <%= render "layouts/footer" %>
+</body>
 </html>

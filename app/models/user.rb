@@ -13,4 +13,5 @@ class User < ApplicationRecord
   has_many :interactive_books, dependent: :restrict_with_exception
   has_many :follow_authors, dependent: :destroy
   has_many :ratings, dependent: :destroy
+  has_one_attached :image
 end

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active nav-linkss">
+        <%= link_to t("static_pages.home"), root_path %>
+      </li>
+      <li class="nav-item dropdown nav-linkss">
+        <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= t("static_pages.dropdown") %></a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-item nav-linkss">
+            <%= link_to t("static_pages.eng"), locale: "en"%></li>
+          <li class="dropdown-item nav-linkss">
+            <%= link_to t("static_pages.vie"), locale: "vi"%></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="navbar-nav nav-linkss">
+      <%= link_to t("static_pages.login"), "#" %>
+    </ul>
+  </div>
+</nav>

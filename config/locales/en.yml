@@ -1,1 +1,65 @@
 en:
+  static_pages:
+    base_title: "Library management"
+    home: "Home"
+    dropdown: "Language"
+    eng: "English"
+    vie: "Vietnamese"
+    welcome: "Welcome to Library management"
+    copy: "Copyright@dungndt"
+    login: "Login"
+    follow_users: "Follow users"
+  book:
+    show: "List book"
+  activerecord:
+    models:
+      user: "Readers"
+      author: "Authors"
+      categories: "Category"
+      interactive_book: "Interactive with book"
+      follow_author: "Follow Authors"
+    attributes:
+      user:
+        full_name: "Full Name"
+        email: "Email"
+        password: "Password"
+        permission: "Role"
+        book: "Book"
+        request_borrow_books: "Borrow book"
+      author:
+        full_name: "Full Name"
+        birth_day: "Birth Day"
+      publisher:
+        name: "Name"
+      categories:
+        name: "Category name"
+        parent_id: "Parent Category"
+      book:
+        name: "Name of book"
+        categories_id: "Category"
+        author_id: "Author"
+        publisher_id: "Publisher"
+        publish_day: "Publish Day"
+        quantity: "Number available"
+        num_of_pages: "Number of pages"
+      request_borrow_book:
+        book_id: "Book"
+        user_id: "User"
+        start_date: "Borrow day"
+        end_date: "Return book day"
+        status: "Status"
+      interactive_book:
+        book_id: "Book"
+        user_id: "User"
+        action: "Action"
+      follow_author:
+        author_id: "Author"
+        user_id: "User"
+      rating:
+        book_id: "Book"
+        user_id: "User"
+        rate: "Vote"
+        content: "Comment"
+      follow_users:
+        follower_id: "Follower"
+        followed_id: "Followed"

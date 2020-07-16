@@ -1,1 +1,65 @@
 vi:
+  static_pages:
+    base_title: "Quản lý thư viện"
+    home: "Trang chủ"
+    dropdown: "Ngôn ngữ"
+    eng: "Tiếng Anh"
+    vie: "Tiếng Việt"
+    welcome: "Chào mừng đến với Thư viện"
+    copy: "Copyright@dungndt"
+    login: "Đăng nhập"
+    follow_users: "Theo dõi người dùng"
+  book:
+    show: "Giá sách thư viện"
+  activerecord:
+    models:
+      user: "Độc giả"
+      author: "Tác giả"
+      categories: "Thể loại"
+      interactive_book: "Tương tác với sách"
+      follow_author: "theo dõi tác giả"
+    attributes:
+      user:
+        full_name: "Tên đầy đủ"
+        email: "Email"
+        password: "Mật khẩu"
+        permission: "Quyền"
+        book: "Sách"
+        request_borrow_books: "Mượn sách"
+      author:
+        full_name: "Tên đầy đủ"
+        birth_day: "Ngày sinh"
+      publisher:
+        name: "Tên NXB"
+      categories:
+        name: "Thể loại"
+        parent_id: "Thuộc thể loại"
+      book:
+        name: "Tên sách"
+        categories_id: "Thể loại"
+        author_id: "Tác giả"
+        publisher_id: "Nhà xuất bản"
+        publish_day: "Ngày xuất bản "
+        quantity: "Số lượng"
+        num_of_pages: "Số trang"
+      request_borrow_book:
+        book_id: "Sách"
+        user_id: "Người dùng"
+        start_date: "Ngày mượn"
+        end_date: "Ngày trả"
+        status: "Trạng thái mượn sách"
+      interactive_book:
+        book_id: "Sách"
+        user_id: "Người dùng"
+        action: "Tương tác"
+      follow_author:
+        author_id: "Tác giả"
+        user_id: "Người dùng"
+      rating:
+        book_id: "Sách"
+        user_id: "Người dùng"
+        rate: "Bình chọn"
+        content: "Đánh giá"
+      follow_users:
+        follower_id: "Người theo dõi"
+        followed_id: "Người được theo dõi"
