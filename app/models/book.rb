@@ -5,6 +5,7 @@ class Book < ApplicationRecord
   has_many :interactive_books, dependent: :destroy
   has_many :request_borrow_books, dependent: :restrict_with_exception
   has_many :ratings, dependent: :destroy
+  has_one_attached :image
 
   accepts_nested_attributes_for :author, :publisher
 
