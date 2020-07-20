@@ -11,6 +11,24 @@ vi:
     follow_users: "Theo dõi người dùng"
   book:
     show: "Giá sách thư viện"
+    index_attr:
+      name: "Tên sách"
+      author: "Tên tác giả"
+      cate: "Thể loại"
+      publish: "Nhà xuất bản"
+      search_title: "Tìm kiếm :"
+      name_tag: "attributes"
+      submit_search: "Search"
+      no_images: "No images"
+      show: "Chi tiết"
+      borrow: "Mượn"
+    key:
+      name: "name"
+      cate: "categories_id"
+      author: "author_id"
+      publish: "publisher_id"
+    mess:
+      find_fails: "Không có quyển sách nào được tìm thấy !"
   activerecord:
     models:
       user: "Độc giả"

@@ -4,8 +4,12 @@
       <li class="nav-item active nav-linkss">
         <%= link_to t("static_pages.home"), root_path %>
       </li>
+      <li class="nav-item active nav-linkss">
+        <%= link_to t("book.show"), books_path %>
+      </li>
       <li class="nav-item dropdown nav-linkss">
-        <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= t("static_pages.dropdown") %></a>
+        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+          <%= t("static_pages.dropdown") %></a>
         <ul class="dropdown-menu">
           <li class="dropdown-item nav-linkss">
             <%= link_to t("static_pages.eng"), locale: "en"%></li>

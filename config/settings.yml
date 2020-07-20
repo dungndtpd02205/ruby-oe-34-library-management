@@ -1,4 +1,9 @@
 book:
   length_name: 100
+  pagi: 6
+  name: "name"
+  cate: "categories_id"
+  author: "author_id"
+  publish: "publisher_id"
 categories:
   length_name: 30
