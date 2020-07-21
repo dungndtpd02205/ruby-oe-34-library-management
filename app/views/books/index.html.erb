@@ -1,0 +1,30 @@
+<% provide(:title, t( "book.show" )) %>
+<div class="row">
+  <div class="col-lg-3 aside"></div>
+  <div class="col-lg-9 row">
+    <div class="search form">
+      <%= form_tag(books_path, method: :get) do %>
+        <%= label_tag t("book.index_attr.search_title") %>
+        <%= select_tag :attributes, options_for_select(items, params[:attributes])%>
+        <%= text_field_tag :value, params[:value] %>
+        <%= submit_tag t("book.index_attr.submit_search") %>
+      <% end %>
+    </div>
+    <div class="row col-md-12">
+      <% @books.each do |book| %>
+          <div class="card book-card-mr col-md-3">
+            <div class="card-img-top">
+              <%= image_tag("image_195509_1_12629.jpg", size: "150x150",
+                :alt => t("book.index_attr.no_images")) %>
+            </div>
+            <div class="card-body">
+              <p><%= book.name %></p>
+              <%= link_to t("book.index_attr.show"), "" %> |
+              <%= link_to t("book.index_attr.borrow"), "" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+</div>
+<%= will_paginate @books%>
+</div>

@@ -11,6 +11,24 @@ en:
     follow_users: "Follow users"
   book:
     show: "List book"
+    index_attr:
+      name: "Book name"
+      author: "Author name"
+      cate: "Category"
+      publish: "Publisher"
+      search_title: "Search by :"
+      name_tag: "attributes"
+      submit_search: "Search"
+      no_images: "No images"
+      show: "Detail"
+      borrow: "Borrow"
+    key:
+      name: "name"
+      cate: "categories_id"
+      author: "author_id"
+      publish: "publisher_id"
+    mess:
+      find_fails: "No book have found! Please try again."
   activerecord:
     models:
       user: "Readers"
@@ -63,3 +81,4 @@ en:
       follow_users:
         follower_id: "Follower"
         followed_id: "Followed"
+
