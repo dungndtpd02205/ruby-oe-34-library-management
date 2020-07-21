@@ -22,6 +22,7 @@ en:
       no_images: "No images"
       show: "Detail"
       borrow: "Borrow"
+    find_fails: "No book have found"
     key:
       name: "name"
       cate: "categories_id"

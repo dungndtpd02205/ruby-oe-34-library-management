@@ -5,5 +5,7 @@ book:
   cate: "categories_id"
   author: "author_id"
   publish: "publisher_id"
+  pub_day: "publish_day"
+  num_page: "num_pag"
 categories:
   length_name: 30

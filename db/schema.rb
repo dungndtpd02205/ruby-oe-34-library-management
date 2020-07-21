@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_023650) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.integer "parent_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -95,7 +96,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_023650) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "book_id"
+    t.integer "book_id", null: false
     t.integer "rate"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
@@ -119,7 +120,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_023650) do
   create_table "users", force: :cascade do |t|
     t.string "full_name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.integer "permission", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -133,6 +134,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_023650) do
   add_foreign_key "follow_authors", "users"
   add_foreign_key "interactive_books", "books"
   add_foreign_key "interactive_books", "users"
+  add_foreign_key "ratings", "books"
   add_foreign_key "ratings", "users"
   add_foreign_key "request_borrow_books", "books"
   add_foreign_key "request_borrow_books", "users"
