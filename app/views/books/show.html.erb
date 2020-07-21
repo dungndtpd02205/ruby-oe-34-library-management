@@ -1,0 +1,30 @@
+<% provide(:title, @book.name) %>
+<div class="row">
+  <%= render "shared/error_messages" , object: @book%>
+  <aside class="col-md-4">
+    <span class="image">
+      <%= image_tag @book.image if @book.image.attached? %>
+      <div class="card-img-top show">
+        <%= image_tag("image_195509_1_12629.jpg", size: "150x150",
+          :alt => t("book.index_attr.no_images")) %>
+      </div>
+    </span>
+  </aside>
+  <div class="col-md-8">
+    <div>
+      <p><%= t("activerecord.attributes.book.author_id") %> :
+        <%= link_to @book.author.full_name, "#" %></p>
+      <p><%= show_category_name @book %></p>
+      <% show_attribute.keys.each do |key| %>
+        <p><%= show_attribute[key] %> : <%= show_value(@book)[key] %></p>
+      <% end %>
+    </div>
+    <div>
+      <%= form_tag("#" , method: :post) do%>
+        <%= text_field_tag t("activerecord.models.user"), "#", hidden: true %>
+        <%= text_field_tag t("activerecord.models.book"), "#", hidden: true %>
+        <%= submit_tag t("book.index_attr.borrow"), disabled: false%>
+      <% end %>
+    </div>
+  </div>
+</div>

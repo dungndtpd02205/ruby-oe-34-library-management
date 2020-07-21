@@ -1,10 +1,15 @@
 class BooksController < ApplicationController
+  before_action :load_book, only: :show
+
   def index
-    @books = Book.sort_name_or_create_at.paginate(page: params[:page]).per_page(Settings.book.pagi)
+    @books = Book.sort_name_or_create_at.paginate(page:
+      params[:page]).per_page(Settings.book.pagi)
     return unless search_params
 
     search_books
   end
+
+  def show; end
 
   private
 
@@ -27,10 +32,19 @@ class BooksController < ApplicationController
                 Book.joins(:publisher).search_by_publish_name value
               else
                 @books
-              end.sort_name_or_create_at.paginate(page: params[:page]).per_page(Settings.book.pagi)
+              end.sort_name_or_create_at.paginate(page:
+                params[:page]).per_page(Settings.book.pagi)
     return if @books.present?
 
     flash[:fails] = t "book.mess.find_fails"
     redirect_to books_url
+  end
+
+  def load_book
+    @book = Book.find_by id: params[:id]
+    return if @book
+
+    flash[:fails] = t "book.find_fails"
+    redirect_to root_url
   end
 end
