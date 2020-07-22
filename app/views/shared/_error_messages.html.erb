@@ -1,7 +1,7 @@
 <% if object.errors.any? %>
 <div id="error_explanation">
   <div class="alert alert-danger">
-    <%= t("sigup_attr.form_err", count: object.errors.count) %>
+    <%= t("login.attr.form_err", count: object.errors.count) %>
   </div>
   <ul>
     <% object.errors.full_messages.each do |msg| %>

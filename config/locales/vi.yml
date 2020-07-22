@@ -9,6 +9,10 @@ vi:
     copy: "Copyright@dungndt"
     login: "Đăng nhập"
     follow_users: "Theo dõi người dùng"
+    account: "Tài khoản"
+    profile: "Hồ sơ"
+    setting: "Cài đặt"
+    log_out: "Đăng xuất"
   book:
     show: "Giá sách thư viện"
     index_attr:
@@ -81,3 +85,16 @@ vi:
       follow_users:
         follower_id: "Người theo dõi"
         followed_id: "Người được theo dõi"
+  login:
+    attr:
+      message_success: "Đăng nhập thành công !"
+      fails: "Đăng nhập thất bại , email hoặc mật khẩu không chính xác !"
+      out_success: "Bạn vừa đăng xuất !"
+      title: "Đăng nhập"
+      new_user: "Người dùng mới?"
+      signup: "Đăng ký"
+      form_err: "Biểu mẫu trên có %{count} lỗi"
+  user:
+    mess:
+      success: "Đăng ký thành công !"
+      falis: "Không tìm thấy người dùng"

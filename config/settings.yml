@@ -9,3 +9,7 @@ book:
   num_page: "num_pag"
 categories:
   length_name: 30
+users:
+  max_name: 50
+  max_email: 150
+  min_pass: 6

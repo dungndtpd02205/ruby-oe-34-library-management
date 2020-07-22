@@ -9,6 +9,10 @@ en:
     copy: "Copyright@dungndt"
     login: "Login"
     follow_users: "Follow users"
+    account: "Account"
+    profile: "Profile"
+    setting: "Settings"
+    log_out: "Log out"
   book:
     show: "List book"
     index_attr:
@@ -82,4 +86,23 @@ en:
       follow_users:
         follower_id: "Follower"
         followed_id: "Followed"
-
+    errors:
+      models:
+        users:
+          attributes:
+            password:
+              too_short: "Password too short"
+              too_long: "Password to long"
+  login:
+    attr:
+      message_success: "Login success!"
+      fails: "Login fails, email or password is wrong !"
+      out_success: "You have been logged out !"
+      title: "Login"
+      new_user: "New User ?"
+      signup: "Sign up"
+      form_err: "This form have %{count} errors"
+  user:
+    mess:
+      success: "Signup success!"
+      falis: "Can't find user"
