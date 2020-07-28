@@ -1,0 +1,45 @@
+<% provide(:title, t("borrow.bo")) %>
+<div class="row">
+  <div class="row col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">
+            <%= t("activerecord.attributes.request_borrow_book.book_id") %>
+          </th>
+          <th scope="col">
+            <%= t("activerecord.attributes.request_borrow_book.user_id") %>
+          </th>
+          <th scope="col">
+            <%= t("activerecord.attributes.request_borrow_book.start_date") %>
+          </th>
+          <th scope="col">
+            <%= t("activerecord.attributes.request_borrow_book.end_date") %>
+          </th>
+          <th scope="col">
+            <%= t("activerecord.attributes.request_borrow_book.status") %>
+          </th>
+          <th scope="col">
+            <%= t("Active") %>
+          </th>
+        </tr>
+      </thead>
+      <% @requests.each do |request| %>
+      <% load_request request %>
+        <tbody>
+          <tr class="<%= check_time_borrow request %>">
+            <th scope="row"></th>
+            <td><%= @request[:user].full_name %></td>
+            <td><%= @request[:book].name %></td>
+            <td><%= request.start_date.strftime("%d/%m/%Y") %></td>
+            <td><%= request.end_date.strftime("%d/%m/%Y") %></td>
+            <td><%= @request[:status] %></td>
+            <td><%= @request[:active] %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+  <%= will_paginate @requests%>
+</div>

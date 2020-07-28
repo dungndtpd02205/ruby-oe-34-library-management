@@ -12,4 +12,8 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def admin?
+    return @current_user.permission.eql? Settings.users.admin if logged_in?
+  end
 end

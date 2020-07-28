@@ -13,18 +13,18 @@
   <div class="col-md-8">
     <div>
       <p><%= t("activerecord.attributes.book.author_id") %> :
-        <%= link_to @book.author.full_name, "#" %></p>
+        <%= link_to @book.author.full_name, @book.author %></p>
       <p><%= show_category_name @book %></p>
       <% show_attribute.keys.each do |key| %>
         <p><%= show_attribute[key] %> : <%= show_value(@book)[key] %></p>
       <% end %>
     </div>
     <div>
-      <%= form_tag("#" , method: :post) do%>
-        <%= text_field_tag t("activerecord.models.user"), "#", hidden: true %>
-        <%= text_field_tag t("activerecord.models.book"), "#", hidden: true %>
-        <%= submit_tag t("book.index_attr.borrow"), disabled: false%>
-      <% end %>
+      <%= form_tag(new_book_request_borrow_book_path(@book.id) ,
+        method: :get) do%>
+        <%= submit_tag t("book.index_attr.borrow") %>
+        <%= text_field_tag :locale, params[:locale], hidden: :true %>
+      <% end if logged_in? && @book.quantity > 0%>
     </div>
   </div>
 </div>

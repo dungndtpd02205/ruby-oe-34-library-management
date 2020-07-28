@@ -37,6 +37,11 @@
           <%= link_to t("static_pages.login"), login_path %>
         </li>
       <% end %>
+      <% if admin? %>
+        <li class="navbar-nav nav-linkss">
+          <%= link_to t("admin.request"), admin_request_borrow_books_path %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>

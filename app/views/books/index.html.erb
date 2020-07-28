@@ -19,8 +19,14 @@
             </div>
             <div class="card-body">
               <p><%= book.name %></p>
-              <%= link_to t("book.index_attr.show"), book %> |
-              <%= link_to t("book.index_attr.borrow"), "" %>
+              <div class="row">
+              <%= link_to t("book.index_attr.show"), book %>
+              <%= form_tag(new_book_request_borrow_book_path(
+                book.id), method: :get) do%>
+                <%= text_field_tag :locale, params[:locale], hidden: :true %>
+                <%= submit_tag t("book.index_attr.borrow")%>
+              <% end if logged_in? && book.quantity > 0 %>
+              </div>
             </div>
           </div>
       <% end %>
