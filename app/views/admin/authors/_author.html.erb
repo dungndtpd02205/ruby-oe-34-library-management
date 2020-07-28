@@ -1,0 +1,11 @@
+<tr id="<%= author.id if author %>">
+  <td><%= image_tag author.display_image_table if author.image.attached? %></td>
+  <td><%= author.full_name %></td>
+  <td><%= author.birth_day %></td>
+  <td>
+    <%= link_to t("static_page.edit"), edit_admin_author_path(author),
+      class: "edit", remote: true%> |
+    <%= link_to t("static_page.destroy"), admin_author_path(author), method: :delete,
+      data:{confirm: t("borrow.confirm")} , class: "delete", remote: true %>
+  </td>
+</tr>

@@ -1,0 +1,11 @@
+<% if @author.errors.any? %>
+  <% @author.errors.full_messages.each do |msg| %>
+    var mess = "<%= msg %>";
+    alert(mess.replace(/&#39;/g, "\'"));
+  <% end %>
+<% else %>
+  alert("Create success !");
+  $("#new-author form").remove()
+  $("#new-author a").show()
+  $('#author tbody').append("<%= j render @author %>");
+<% end %>

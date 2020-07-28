@@ -1,0 +1,22 @@
+<h1><%= t "activerecord.models.author" %></h1>
+<div class="row">
+  <div class="col-6">
+    <table id="author" class="table">
+      <thead>
+        <th scope="col"><%= t "static_pages.ava" %></th>
+        <th scope="col"><%= t "activerecord.attributes.author.full_name" %></th>
+        <th scope="col"><%= t "activerecord.attributes.author.birth_day" %></th>
+        <th scope="col"><%= t "static_pages.act" %></th>
+      </thead>
+      <tbody>
+        <%= render @authors %>
+      </tbody>
+    </table>
+    <%= will_paginate @authors %>
+  </div>
+  <div class="col-6">
+    <div id="new-author">
+      <%= link_to t("author.new"), new_admin_author_path, remote: true %>
+    </div>
+  </div>
+</div>

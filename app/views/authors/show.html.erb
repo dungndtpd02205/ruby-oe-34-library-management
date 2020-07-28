@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-6">
+    <h1><%= t "activerecord.models.author" %></h1>
+    <div class="col">
+      <%= image_tag @author.display_image_form if @author.image.attached? %>
+    </div>
+    <div class="col">
+      <p>
+        <strong><%= t "activerecord.attributes.author.full_name" %>:</strong>
+        <%= @author.full_name %>
+      </p>
+      <p>
+        <strong><%= t "activerecord.attributes.author.birth_day" %>:</strong>
+        <%= @author.birth_day %>
+      </p>
+    </div>
+  </div>
+  <div class="col-6">
+    <h1><%= t("book.show") %></h1>
+    <% @books.each do |book| %>
+    <div class="card book-card-mr col-md-4">
+      <div class="card-img-top">
+        <%= image_tag("image_195509_1_12629.jpg", size: "150x150",
+        :alt => t("book.index_attr.no_images")) %>
+      </div>
+      <div class="card-body">
+        <p><%= book.name %></p>
+        <div class="row">
+          <%= link_to t("book.index_attr.show"), book %>
+          <%= form_tag(new_book_request_borrow_book_path(
+          book.id), method: :get) do%>
+          <%= text_field_tag :locale, params[:locale], hidden: :true %>
+          <%= submit_tag t("book.index_attr.borrow")%>
+          <% end if logged_in? && book.quantity > 0 %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <%= will_paginate @books %>
+  </div>
+</div>
+<%= link_to t("book.show"), books_path %>

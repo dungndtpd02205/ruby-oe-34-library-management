@@ -1,0 +1,6 @@
+$('.edit').bind('ajax:success', function(){
+  $("#new-author form").remove()
+  $("#new-author script").remove()
+  $("#new-author a").hide()
+  $("#new-author").append("<%= j render 'form', author: @author %>")
+})
